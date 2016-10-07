@@ -1,0 +1,11 @@
+{
+  "manifest_version": 2,
+  "name": "Data Left",
+  "description": "This extension queries data balance in the monthly subscription plans of tripleplay.in",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
+}
