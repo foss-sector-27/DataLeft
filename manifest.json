@@ -3,6 +3,7 @@
   "name": "Data Left",
   "description": "This extension queries data balance in the monthly subscription plans of tripleplay.in",
   "version": "1.0",
+  "permissions": ["<all_urls>", "storage"],
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html"

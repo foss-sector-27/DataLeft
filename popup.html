@@ -5,41 +5,66 @@ This page is shown when the extension button is clicked, because the
 value "popup.html".
 -->
 <html>
-<head>
-<title>Getting Started Extension's Popup</title>
-<style>
-body {
-	font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-	font-size: 100%;
-	min-width : 200px;
-	line-height : 1.5em;
-}
-#wrapper {
-	min-height : 70px;
-	min-width : 40px;
-	
-}
-</style>
-
+	<head>
+		<title>Getting Started Extension's Popup</title>
 <!--
 - JavaScript and HTML must be in separate files: see our Content Security
 - Policy documentation[1] for details and explanation.
 -
 - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
 -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-<script src='work.js'></script>
-</head>
-<body>
-<center>
-<div id='wrapper'>
-<span id='loading'>Loading</span>
-<div id="usage"></div>
-<div id="days"></div>
-<div id="speed"></div>
-<div id="status"></div>
-</center>
-</div>
-</body>
+		<link rel="stylesheet" type="text/css" href="semantic/semantic.min.css"></link>
+		<script src="jquery-3.1.1.min.js"></script>
+		<script src="semantic/semantic.min.js"></script>
+		<script src='work.js'></script>
+	</head>
+
+	<body>
+		<div class="ui segment" style="margin-bottom: 0px;">
+			<div class="ui inverted active dimmer">
+				<div class="ui text loader">Loading</div>
+			</div>
+			<div class="ui header">Data Left</div>
+			<div class="ui divider"></div>
+			<form class="ui form">
+				<div class="field">
+					<label>Username</label>
+					<input tabindex="1" type="text" name="username" placeholder="Username">
+					<div class="ui err_username hidden pointing red basic label">
+						Please enter username
+					</div>
+				</div>
+				<div class="field">
+					<label>Password</label>
+					<input tabindex="2" type="password" name="password" placeholder="Password">
+					<div class="ui err_password hidden pointing red basic label">
+						Please enter password
+					</div>
+				</div>
+				<div class="field">
+					<div class="ui checkbox">
+					<input tabindex="3" type="checkbox" tabindex="0" class="hidden">
+						<label>Save Credentials</label>
+					</div>
+				</div>
+				<div tabindex="4" class="ui primary submit button signin">Submit</div>
+			</form>
+			<div class="container" style="display: none;">
+				<div class="ui divided selection list">
+					<a class="item">
+						<div class="ui large red horizontal current_usage label">Used!</div>
+						Used!
+					</a>
+					<a class="item">
+						<div class="ui large purple horizontal plan_speed label">Speed</div>
+						Speed
+					</a>
+				</div>
+				<div tabindex="4" class="ui primary fluid submit button log_out">Log Out</div>
+			</div>
+		</div>
+		<div class="temp" style="display: none;"></div>
+		<div class="state" data-state="0"></div>
+	</body>
 </html>
 
